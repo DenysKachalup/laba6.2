@@ -1,7 +1,9 @@
 #include<iostream>
 #include<ctime>
 #include<Windows.h>
+
 using namespace std;
+
 void Creat(int c[], const int size)
 {
 	int b;
@@ -33,49 +35,63 @@ void Creat(int c[], const int size)
 
 	}
 }
-//int Sum(int c[], const int size)
-//{
-//
-//	if (size < 0)
-//		return 0;
-//	else
-//		return c[size] + Sum(c, size - 1);
-//
-//}
 
-int SumaNepar(int c[],const int size )
+int SumaPar(int c[],const int size )
 {
 	    int s=0;
 		for (int i = 0; i <= size; i++)
 		{
-			if (c[i] % 2 != 0)
+			if (c[i] % 2 == 0)
 				s += c[i];
-			else
-				s += 0;
 			
 		}
 
 		return s;
 	
 }
+int number(int c[], const int size)
+{
+	int s = 0;
+	for (int i = 0; i <= size; i++)
+	{
+		if (c[i] % 2 == 0)
+			s++;
+	
+		
+	}
+	return s;
+	
+}
+ double arif( const double t, const double r)
+{
+	 double b = t/r;
+	 return b;
+}
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 	srand(time(NULL));
-	const int n = 27;
-
-	int c[n];
-	int b;
+	
+	cout << "Введіть кількість елементів масиву: ";
+	int n; cin >> n;
+	int *c = new int [n];
+	
 
 	Creat(c, n);
 	cout << endl;
-	SumaNepar(c, n);
-	//Sum(c, n - 1);
-	//cout << "Сума: " << Sum(c, n - 1) << endl;
-	
+
+	int t =SumaPar(c, n-1);
+	cout << "Сума парних чисел: " << SumaPar(c, n - 1) << endl;
 	cout << endl;
-	cout << "Сума непарних " << SumaNepar(c, n-1);
+
+	int r =number(c, n-1);
+	cout << "Кількість парних чисел: " << r << endl;
 	cout << endl;
+
+	arif(t, r);
+	cout << "Середнє арифметичне: " << arif(t, r);
+
+	delete[] c;
 	return 0;
 }
