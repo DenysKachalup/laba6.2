@@ -1,0 +1,4 @@
+﻿  UnitTest1.cpp
+D:\AP\LABAP\6\laba6.2\laba6.2\Source.cpp(74,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\AP\LABAP\6\laba6.2\UnitTest1\UnitTest1.cpp(31,10): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  UnitTest1.vcxproj -> D:\AP\LABAP\6\laba6.2\Debug\UnitTest1.dll
